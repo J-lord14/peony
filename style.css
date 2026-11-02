@@ -1,0 +1,1044 @@
+
+/* EXTRA PINK GLITTER THEME */
+
+:root {
+  --ink: #a83270;
+  --muted: #d477a8;
+  --rose: #ff4fa3;
+  --cream: #fff0f8;
+  --pink: #ffb6dc;
+  --hot-pink: #ff168b;
+  --glitter: #fff0fa;
+}
+
+/* Pink dreamy background */
+body {
+  background:
+    radial-gradient(circle at 15% 20%, #ffc0e5 0%, transparent 35%),
+    radial-gradient(circle at 85% 75%, #ff8fc9 0%, transparent 35%),
+    linear-gradient(135deg, #fff0f8, #ffd6eb, #ffb5dc);
+  color: var(--ink);
+}
+
+/* Glitter overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.65;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, white 99%, transparent),
+    radial-gradient(2px 2px at 80px 90px, #fff 99%, transparent),
+    radial-gradient(3px 3px at 150px 50px, #ff4fa3 99%, transparent),
+    radial-gradient(2px 2px at 200px 120px, white 99%, transparent),
+    radial-gradient(3px 3px at 250px 180px, #fff 99%, transparent),
+    radial-gradient(2px 2px at 300px 40px, white 99%, transparent);
+  background-size: 320px 220px;
+  animation: glitterDrift 8s linear infinite;
+}
+
+@keyframes glitterDrift {
+  from { background-position: 0 0; }
+  to { background-position: 320px 220px; }
+}
+
+/* Pink glass cards */
+.glass,
+.card,
+.panel {
+  background: rgba(255, 235, 246, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 8px 35px rgba(255, 65, 155, 0.18),
+    inset 0 0 20px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(18px);
+}
+
+/* Glowing headings */
+h1, h2, h3 {
+  color: #d93688;
+  text-shadow:
+    0 0 8px #fff,
+    0 0 18px #ff8fc9,
+    0 0 30px #ff4fa3;
+}
+
+/* Buttons */
+button,
+.btn {
+  background: linear-gradient(135deg, #ff8bc5, #ff2997, #e90078);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.8);
+  box-shadow:
+    0 0 12px #ff8fc9,
+    0 0 25px rgba(255, 41, 151, 0.55);
+  transition: 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow:
+    0 0 18px #fff,
+    0 0 35px #ff2997;
+}
+
+/* Image frames: preserve existing images */
+img {
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 0 12px rgba(255, 105, 180, 0.35),
+    0 0 25px rgba(255, 20, 147, 0.2);
+}
+
+/* Pink glowing borders */
+.hero-photo,
+.closing-photo {
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 0 15px #ff9ccc,
+    0 0 35px rgba(255, 20, 147, 0.4);
+}
+
+/* Selection highlight */
+::selection {
+  background: #ff4fa3;
+  color: white;
+}
+
+/* Sparkling text accents */
+.accent,
+.highlight {
+  color: #ff168b;
+  text-shadow: 0 0 12px rgba(255, 22, 139, 0.55);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  background: #fff5fa;
+  overflow-x: hidden;
+}
+
+/* PINK AMBIENT BACKGROUND */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(circle at 15% 10%, #fff 0, #ffe4f0 38%, #f8c1dc 100%);
+}
+
+/* GLITTERING PETALS */
+.petal-field {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  top: -10vh;
+  color: #ff8fc4;
+  opacity: .9;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 12px #ffb6da,
+    0 0 22px #ff69ad;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(var(--drift), 110vh, 0) rotate(700deg);
+    opacity: .1;
+  }
+}
+
+/* GLASSMORPHISM */
+.glass {
+  background: rgba(255, 225, 240, .58);
+  border: 1px solid rgba(255, 255, 255, .85);
+  box-shadow:
+    0 15px 45px #e65b9b30,
+    inset 0 1px 0 #ffffff;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* NAVIGATION */
+.topbar {
+  height: 82px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffd1e5;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 231, 242, .8);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  font: 600 28px "Playfair Display", serif;
+  text-decoration: none;
+  color: #a83d72;
+  letter-spacing: -1px;
+}
+
+.brand span {
+  color: #ff69ad;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+}
+
+nav a,
+.tiny-link {
+  font-size: 13px;
+  text-decoration: none;
+  color: #a64e7b;
+}
+
+nav a:hover,
+.tiny-link:hover {
+  color: #ff3f91;
+}
+
+.tiny-link {
+  border: 1px solid #f6a9ce;
+  border-radius: 30px;
+  padding: 10px 16px;
+}
+
+.tiny-link span {
+  margin-left: 10px;
+}
+
+/* HERO */
+.hero {
+  height: min(850px, calc(100vh - 82px));
+  min-height: 650px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8%;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  background-position: center 48%;
+  background-size: cover;
+  transform: scale(1.02);
+  animation: slowzoom 24s ease-in-out infinite alternate;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(105, 24, 65, .48), rgba(190, 67, 125, .13) 65%, rgba(255, 190, 220, .15)),
+    linear-gradient(0deg, #8f315b35, transparent 45%);
+}
+
+@keyframes slowzoom {
+  to {
+    transform: scale(1.09);
+  }
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: clamp(30px, 5vw, 65px);
+  border-radius: 28px;
+  max-width: 600px;
+  color: #963e6c;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #d34d91;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.line {
+  width: 30px;
+  height: 1px;
+  background: #ff69ad;
+}
+
+h1,
+h2 {
+  font: 500 clamp(48px, 6.5vw, 88px)/1.04 "Playfair Display", serif;
+  letter-spacing: -2px;
+  margin: 25px 0;
+}
+
+h1 em,
+h2 em {
+  color: #ed68a7;
+  font-weight: 500;
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #a45f83;
+  max-width: 440px;
+  margin: 28px 0 32px;
+}
+
+/* BUTTONS */
+.primary-btn {
+  display: inline-flex;
+  gap: 28px;
+  align-items: center;
+  background: linear-gradient(135deg, #ff78b5, #d94388);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  padding: 15px 22px;
+  font-size: 13px;
+  box-shadow: 0 12px 30px #e94c983d;
+  transition: .25s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #ff9bc9, #ed398d);
+  box-shadow: 0 15px 35px #e94c9860;
+}
+
+.hero-caption,
+.scroll-note {
+  position: absolute;
+  bottom: 35px;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 12px #702447;
+}
+
+.hero-caption {
+  right: 7%;
+}
+
+.hero-caption span {
+  opacity: .7;
+  margin-left: 12px;
+}
+
+.scroll-note {
+  left: 8%;
+}
+
+.scroll-note span {
+  margin-left: 15px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 110px 10%;
+}
+
+.section-tag {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #d36b9e;
+  margin-bottom: 45px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 10%;
+}
+
+.about h2,
+.meaning h2,
+.bouquet-heading h2 {
+  font-size: clamp(42px, 5vw, 66px);
+  margin: 0;
+}
+
+.about-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #a16b88;
+}
+
+.fact-row {
+  border-top: 1px solid #f5c6dd;
+  margin-top: 30px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  color: #c0789e;
+}
+
+.fact-row b {
+  font-weight: 500;
+  color: #9b416e;
+  margin-right: 20px;
+}
+
+/* MEANING CARDS */
+.meaning {
+  background: linear-gradient(135deg, #ffe2f0, #fff4f9, #ffd6e9);
+}
+
+.meaning h2 {
+  margin-bottom: 50px;
+}
+
+.meaning-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.meaning-card {
+  padding: 35px 30px;
+  border-radius: 18px;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.meaning-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 35px #ed7caf35;
+}
+
+.card-icon {
+  font-size: 30px;
+  color: #f06ca9;
+  text-shadow: 0 0 12px #ffb8d9;
+}
+
+.meaning-card h3 {
+  font: 500 22px "Playfair Display", serif;
+  margin: 22px 0 12px;
+}
+
+.meaning-card p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #ad7893;
+}
+
+
+/* CLOSING */
+.closing {
+  min-height: 650px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 90px 20px;
+  overflow: hidden;
+}
+
+.closing-photo {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  filter: saturate(1.15);
+}
+
+.closing:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #a8326745;
+}
+
+.closing-content {
+  z-index: 1;
+  text-align: center;
+  padding: 55px 70px;
+  border-radius: 28px;
+}
+
+.closing h2 {
+  font-size: clamp(48px, 7vw, 80px);
+  margin: 20px;
+}
+
+.closing > p:not(.eyebrow) {
+  color: #a45f83;
+  font-size: 14px;
+  margin: 25px 0 30px;
+}
+
+.closing .eyebrow {
+  justify-content: center;
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 8%;
+  font-size: 11px;
+  color: #c0789e;
+  background: #fff0f7;
+}
+
+footer span:first-child {
+  font: 600 20px "Playfair Display", serif;
+  color: #a83d72;
+}
+
+/* SCROLL ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CURSOR PEONY */
+.cursor-peony {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 66px;
+  height: 66px;
+  pointer-events: none;
+  z-index: 30;
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  transition: opacity .2s;
+  filter: drop-shadow(0 5px 12px #ed68a7);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid #fff9;
+}
+
+.cursor-peony span {
+  position: absolute;
+  right: -7px;
+  top: -9px;
+  color: #fff5a8;
+  text-shadow: 0 0 7px #fff, 0 0 15px #ff69ad;
+  animation: glitter 1.1s ease-in-out infinite;
+}
+
+@keyframes glitter {
+  50% {
+    opacity: .25;
+    transform: scale(.55) rotate(60deg);
+  }
+}
+
+.cursor-peony.active {
+  opacity: 1;
+}
+
+.cursor-peony:after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px solid #ff9bc9;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ff69ad;
+  animation: ring 2s ease-out infinite;
+}
+
+@keyframes ring {
+  to {
+    inset: -23px;
+    opacity: 0;
+  }
+}
+
+/* MOBILE */
+@media(max-width:760px) {
+  .topbar {
+    padding: 0 5%;
+    height: 70px;
+  }
+
+  nav {
+    gap: 13px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .tiny-link {
+    display: none;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 720px;
+    padding: 55px 6%;
+    align-items: center;
+  }
+
+  .hero-copy {
+    padding: 30px 25px;
+  }
+
+  .hero-caption {
+    right: 6%;
+    bottom: 18px;
+    font-size: 8px;
+  }
+
+  .scroll-note {
+    bottom: 18px;
+  }
+
+  .section {
+    padding: 75px 7%;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .fact-row {
+    flex-wrap: wrap;
+  }
+
+  .meaning-cards,
+  .bouquet-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .meaning-card {
+    padding: 28px;
+  }
+
+  .bouquet {
+    min-height: 350px;
+  }
+
+  .bouquet-heading {
+    display: block;
+  }
+
+  .bouquet-heading p {
+    margin-top: 20px;
+  }
+
+  .closing-content {
+    padding: 35px 22px;
+  }
+
+  footer {
+    padding: 22px 6%;
+    gap: 15px;
+  }
+
+  .cursor-peony {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media(hover:none) {
+  .cursor-peony {
+    display: none;
+  }
+}
+
+/* EXTRA PINK GLITTER */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  opacity: .23;
+  background-image:
+    radial-gradient(circle, white 1px, transparent 1.5px),
+    radial-gradient(circle, #ff8fc4 1px, transparent 1.5px);
+  background-size: 47px 47px, 73px 73px;
+  background-position: 0 0, 20px 30px;
+  animation: glitterDrift 12s linear infinite;
+}
+
+@keyframes glitterDrift {
+  to {
+    background-position: 47px 94px, 93px 103px;
+  }
+}
+
+::selection {
+  background: #ffacd0;
+  color: #8c315e;
+}
+
+
+.hero-photo {
+  background:
+    linear-gradient(rgba(255, 190, 220, 0.18), rgba(255, 190, 220, 0.18)),
+    url("https://i.pinimg.com/736x/d2/bb/14/d2bb1420d4e607e39ea22a4e9e274674.jpg")
+    center 48% / cover no-repeat;
+}
+
+.closing-photo {
+  background:
+    linear-gradient(rgba(255, 190, 220, 0.18), rgba(255, 190, 220, 0.18)),
+    url("https://i.pinimg.com/1200x/08/54/8f/08548fb09801ea83b1a7ba6395115790.jpg")
+    center / cover no-repeat;
+}
+
+/* ✨ EXTRA PINK + GLITTER ANIMATION ✨ */
+
+/* Pinker atmosphere */
+body {
+  background:
+    radial-gradient(circle at 10% 15%, #ffb6dc 0%, transparent 35%),
+    radial-gradient(circle at 90% 80%, #ff69ad 0%, transparent 35%),
+    linear-gradient(135deg, #fff0f8, #ffc6e2, #ffe6f3);
+  background-attachment: fixed;
+}
+
+/* Floating sparkles */
+.sparkle-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sparkle {
+  position: absolute;
+  left: var(--x);
+  top: 110%;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: white;
+  box-shadow:
+    0 0 6px 3px white,
+    0 0 15px 5px #ff69b4,
+    0 0 25px 8px #ff168f;
+  animation: sparkleRise var(--duration) linear var(--delay) infinite;
+}
+
+.sparkle::before,
+.sparkle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: white;
+  transform: translate(-50%, -50%);
+}
+
+.sparkle::before {
+  width: 2px;
+  height: 300%;
+}
+
+.sparkle::after {
+  width: 300%;
+  height: 2px;
+}
+
+@keyframes sparkleRise {
+  0% {
+    transform: translateY(0) scale(.3) rotate(0);
+    opacity: 0;
+  }
+  15% { opacity: 1; }
+  100% {
+    transform: translate(var(--drift), -125vh) scale(1.2) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* Whole website entrance */
+body {
+  animation: pageEntrance 1.2s ease both;
+}
+
+@keyframes pageEntrance {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  filter: blur(5px);
+  transition: all .9s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Glowing pink glass cards */
+.glass,
+.card,
+.panel,
+.meaning-card {
+  background: rgba(255, 215, 237, .65);
+  border: 1px solid white;
+  box-shadow:
+    0 12px 35px rgba(255, 20, 147, .22),
+    0 0 20px rgba(255, 105, 180, .3),
+    inset 0 0 20px rgba(255,255,255,.5);
+  animation: cardGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes cardGlow {
+  from {
+    box-shadow: 0 10px 25px #ff69b433;
+  }
+  to {
+    box-shadow:
+      0 15px 40px #ff168f55,
+      0 0 25px #ffb6dc;
+  }
+}
+
+/* Sparkling headings */
+h1, h2, h3 {
+  color: #e62989;
+  text-shadow:
+    0 0 8px white,
+    0 0 18px #ff69b4,
+    0 0 35px #ff168f;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  to {
+    text-shadow:
+      0 0 12px white,
+      0 0 25px #ff69b4,
+      0 0 45px #ff168f;
+  }
+}
+
+/* Shimmering buttons */
+.primary-btn {
+  background: linear-gradient(120deg, #ffb6dc, #ff2997, #e90078);
+  box-shadow: 0 0 15px #ff69b4, 0 0 30px #ff168f66;
+  transition: .3s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 0 20px white, 0 0 40px #ff168f;
+}
+
+/* Glowing peony cursor */
+.cursor-peony {
+  filter:
+    drop-shadow(0 0 8px #ff69b4)
+    drop-shadow(0 0 20px #ff168f);
+  animation: peonyPulse 2s ease-in-out infinite;
+}
+
+@keyframes peonyPulse {
+  50% {
+    transform: translate(-50%, -50%) rotate(8deg) scale(1.12);
+  }
+}
+
+/* Preserve original photo backgrounds */
+.hero-photo,
+.closing-photo {
+  border: 2px solid white;
+  box-shadow: 0 0 20px #ff69b4, 0 0 40px #ff168f66;
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* =====================================
+   PEONY GARDEN THEME
+===================================== */
+
+:root {
+    --peony-pink: #ff9fcb;
+    --peony-light: #ffd6e8;
+    --peony-dark: #e85d9e;
+}
+
+/* Decorative flower layer */
+.peony-garden {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Peony flower design */
+.peony-bloom {
+    position: absolute;
+    width: var(--flower-size, 150px);
+    aspect-ratio: 1;
+    opacity: var(--flower-opacity, 0.35);
+    background:
+        radial-gradient(ellipse at 50% 18%, #fff0f7 0 15%, transparent 16%),
+        radial-gradient(ellipse at 72% 28%, #ffc1dc 0 20%, transparent 21%),
+        radial-gradient(ellipse at 82% 52%, #ffe0ed 0 19%, transparent 20%),
+        radial-gradient(ellipse at 68% 76%, #f99bc5 0 20%, transparent 21%),
+        radial-gradient(ellipse at 43% 82%, #ffd0e4 0 20%, transparent 21%),
+        radial-gradient(ellipse at 20% 62%, #f8a7cb 0 20%, transparent 21%),
+        radial-gradient(ellipse at 22% 35%, #ffe0ed 0 20%, transparent 21%),
+        radial-gradient(circle at center, #e987b5 0 12%, #ffcae1 13% 22%, transparent 23%);
+    filter: drop-shadow(0 8px 14px rgba(232, 93, 158, 0.2));
+    animation: peonyFloat 9s ease-in-out infinite;
+}
+
+.peony-bloom::after {
+    content: "";
+    position: absolute;
+    inset: 35%;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ffe9a8, #f4a7c5 65%, transparent 70%);
+    filter: blur(2px);
+}
+
+.peony-bloom:nth-child(1) {
+    top: 5%;
+    left: 3%;
+    --flower-size: 190px;
+    --flower-opacity: .38;
+}
+
+.peony-bloom:nth-child(2) {
+    top: 24%;
+    right: 2%;
+    --flower-size: 150px;
+    --flower-opacity: .3;
+    animation-delay: -3s;
+}
+
+.peony-bloom:nth-child(3) {
+    top: 48%;
+    left: -3%;
+    --flower-size: 210px;
+    --flower-opacity: .28;
+    animation-delay: -5s;
+}
+
+.peony-bloom:nth-child(4) {
+    top: 70%;
+    right: 4%;
+    --flower-size: 180px;
+    --flower-opacity: .35;
+    animation-delay: -2s;
+}
+
+.peony-bloom:nth-child(5) {
+    bottom: -5%;
+    left: 35%;
+    --flower-size: 160px;
+    --flower-opacity: .25;
+    animation-delay: -6s;
+}
+
+/* Floating petals */
+.garden-petal {
+    position: absolute;
+    width: 15px;
+    height: 22px;
+    border-radius: 80% 20% 70% 30%;
+    background: linear-gradient(135deg, #fff0f7, #f58fba);
+    opacity: .65;
+    animation: petalDrift linear infinite;
+}
+
+@keyframes peonyFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+    50% {
+        transform: translateY(-18px) rotate(8deg);
+    }
+}
+
+@keyframes petalDrift {
+    0% {
+        transform: translate3d(0, -10vh, 0) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: .7; }
+    85% { opacity: .6; }
+    100% {
+        transform: translate3d(50px, 110vh, 0) rotate(500deg);
+        opacity: 0;
+    }
+}
+
+
+
+/* More floral pink atmosphere */
+body {
+    background-color: #fff0f7;
+}
+
+.ambient {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 160, 205, .24), transparent 35%),
+        radial-gradient(circle at 85% 70%, rgba(255, 190, 220, .25), transparent 38%);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .peony-bloom {
+        --flower-size: 110px !important;
+        opacity: .22;
+    }
+}
